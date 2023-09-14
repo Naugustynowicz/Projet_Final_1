@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+
+  form(action="/users/connection2/" method="post")
+    label(for="userName") Enter name: 
+    input(
+      id="userName"
+      type="text"
+      name="userName"
+      value="Default name."
+    )
+    input(type="submit" value="OK")
