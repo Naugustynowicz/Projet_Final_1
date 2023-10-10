@@ -35,24 +35,6 @@ const Connection = () => {
         if(response.ok){
             const results = await response.json();   
             sessionStorage.setItem("key", results.token);
-                
-            // const jwt_token = results.token;
-            // if( !jwt_token )
-            // {
-            //     // redirection vers la page login
-            //     console.log("Pas de token.");
-            // }
-            // console.log("Token : " + jwt_token);
-            // let decodedToken = jwt.verify(jwt_token, jwt_secret);
-            // //const loggedUser = new UserModel.findOne(decodedToken.userId);
-            // // if( loggedUser.role !== 'admin' )
-            // // {
-            // //     // detruire le token et renvoyer vers la page d'accueil
-            // //     // redirection
-            // //     console.log("Echec de la vérification.");
-            // // }
-            // // recuperation des data et envoi pour affichage de la page admin
-            // console.log("Vérification : " + decodedToken.token);
 
             console.log("result : " + JSON.stringify(results));
             setIsLoaded(true);
@@ -88,13 +70,13 @@ const Connection = () => {
     if (error) {
         return (
             <>
-            <div>Error: {error.message}</div>
-            <h1>Titre</h1>
-            <p>Ceci est un titre</p>
+            <div>Erreur: {error.message}</div>
+            <h1>Connection</h1>
+            <p>Données de connection :</p>
             <form onSubmit={handleSubmit}>
-                <label for="userName">Name</label>
+                <label for="userName">Nom d'Utilisateur</label>
                 <input id="userName" type="text" name="userName" onChange={handleChange}/>
-                <label for="password">Password</label>
+                <label for="password">Mot de Passe</label>
                 <input id="password" type="text" name="password" onChange={handleChange}/>
                 <p>
                 <input type="submit" value="OK"/>
@@ -103,7 +85,7 @@ const Connection = () => {
             </>
         );
     } else if (!isLoaded) {
-        return <div>Loading...</div>;
+        return <div>Chargement en cours...</div>;
     } else if(items && items.usersInstances && items.usersInstances.userName && items.usersInstances.password){
         if(items.usersInstances.password === "true" && items.usersInstances.token){
             const cookies = new Cookies();
@@ -111,16 +93,16 @@ const Connection = () => {
             cookies.set("token", items.usersInstances.token, { path: '/' });
         return (
                 <>
-                <ul> You're connected as :
+                <ul> Vous êtes identifié comme :
                     {items.usersInstances.userName}
                 </ul>
                 
-                <h1>Titre</h1>
-                <p>Ceci est un titre</p>
+                <h1>Connection</h1>
+                <p>Données de connection :</p>
                 <form onSubmit={handleSubmit}>
-                    <label for="userName">Name</label>
+                    <label for="userName">Nom d'Utilisateur</label>
                     <input id="userName" type="text" name="userName" onChange={handleChange}/>
-                    <label for="password">Password</label>
+                    <label for="password">Mot de Passe</label>
                     <input id="password" type="text" name="password" onChange={handleChange}/>
                     <p>
                     <input type="submit" value="OK"/>
@@ -131,14 +113,14 @@ const Connection = () => {
         } else {
             return (
                 <>
-                <div>Error: wrong password</div>
+                <div>Erreur : mot de passe incorrect.</div>
                 
-                <h1>Titre</h1>
-                <p>Ceci est un titre</p>
+                <h1>Connection</h1>
+                <p>Données de connection :</p>
                 <form onSubmit={handleSubmit}>
-                    <label for="userName">Name</label>
+                    <label for="userName">Nom d'Utilisateur</label>
                     <input id="userName" type="text" name="userName" onChange={handleChange}/>
-                    <label for="password">Password</label>
+                    <label for="password">Mot de Passe</label>
                     <input id="password" type="text" name="password" onChange={handleChange}/>
                     <p>
                     <input type="submit" value="OK"/>
@@ -151,13 +133,13 @@ const Connection = () => {
     } else {
         return(
             <>
-            <div>Error: empty response</div>
-            <h1>Titre</h1>
-            <p>Ceci est un titre</p>
+            <div>RàS.</div>
+            <h1>Connection</h1>
+            <p>Données de connection :</p>
             <form onSubmit={handleSubmit}>
-                <label for="userName">Name</label>
+                <label for="userName">Nom d'Utilisateur</label>
                 <input id="userName" type="text" name="userName" onChange={handleChange}/>
-                <label for="password">Password</label>
+                <label for="password">Mot de Passe</label>
                 <input id="password" type="text" name="password" onChange={handleChange}/>
                 <p>
                 <input type="submit" value="OK"/>

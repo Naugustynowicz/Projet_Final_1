@@ -65,15 +65,15 @@ const Inscription = () => {
     if (error) {
         return (
             <>
-            <div>Error: {error.message}</div>
-            <h1>Titre</h1>
-            <p>Ceci est un titre</p>
+            <div>Erreur: {error.message}</div>
+            <h1>Inscription</h1>
+            <p>Formulaire d'inscription :</p>
             <form onSubmit={handleSubmit}>
-                <label for="_id">id</label>
+                <label for="_id">Clée primaire (bonne chance).</label>
                 <input id="_id" type="text" name="_id" onChange={handleChange}/>
-                <label for="userName">Name</label>
+                <label for="userName">Nom d'Utilisateur</label>
                 <input id="userName" type="text" name="userName" onChange={handleChange}/>
-                <label for="password">Password</label>
+                <label for="password">Mot de Passe</label>
                 <input id="password" type="text" name="password" onChange={handleChange}/>
                 <p>
                 <input type="submit" value="OK"/>
@@ -82,43 +82,30 @@ const Inscription = () => {
             </>
         );
     } else if (!isLoaded) {
-        return <div>Loading...</div>;
+        return <div>Chargement en cours...</div>;
     } else if(items && items.usersInstances && items.usersInstances.userName && items.usersInstances.password){
         if(items.usersInstances.password === "true"){
         return (
                 <>
-                <ul> You're connected as :
+                <ul> Inscription réussite :
                     {items.usersInstances.userName}
                 </ul>
                 
-                <h1>Titre</h1>
-                <p>Ceci est un titre</p>
-                <form onSubmit={handleSubmit}>
-                    <label for="_id">id</label>
-                    <input id="_id" type="text" name="_id" onChange={handleChange}/>
-                    <label for="userName">Name</label>
-                    <input id="userName" type="text" name="userName" onChange={handleChange}/>
-                    <label for="password">Password</label>
-                    <input id="password" type="text" name="password" onChange={handleChange}/>
-                    <p>
-                    <input type="submit" value="OK"/>
-                    </p>
-                </form>
                 </>
             );
         } else {
             return (
                 <>
-                <div>Error: wrong password</div>
+                <div>Erreur: problème lors de l'inscription.</div>
                 
-                <h1>Titre</h1>
-                <p>Ceci est un titre</p>
+                <h1>Inscription</h1>
+                <p>Formulaire d'inscription :</p>
                 <form onSubmit={handleSubmit}>
-                    <label for="_id">id</label>
+                    <label for="_id">Clée primaire (bonne chance).</label>
                     <input id="_id" type="text" name="_id" onChange={handleChange}/>
-                    <label for="userName">Name</label>
+                    <label for="userName">Nom d'Utilisateur</label>
                     <input id="userName" type="text" name="userName" onChange={handleChange}/>
-                    <label for="password">Password</label>
+                    <label for="password">Mot de Passe</label>
                     <input id="password" type="text" name="password" onChange={handleChange}/>
                     <p>
                     <input type="submit" value="OK"/>
@@ -131,15 +118,15 @@ const Inscription = () => {
     } else {
         return(
             <>
-            <div>Error: empty response</div>
-            <h1>Titre</h1>
-            <p>Ceci est un titre</p>
+            <div>RàS.</div>
+            <h1>Inscription</h1>
+            <p>Formulaire d'inscription :</p>
             <form onSubmit={handleSubmit}>
-                <label for="_id">id</label>
+                <label for="_id">Clée primaire (bonne chance).</label>
                 <input id="_id" type="text" name="_id" onChange={handleChange}/>
-                <label for="userName">Name</label>
+                <label for="userName">Nom d'Utilisateur</label>
                 <input id="userName" type="text" name="userName" onChange={handleChange}/>
-                <label for="password">Password</label>
+                <label for="password">Mot de Passe</label>
                 <input id="password" type="text" name="password" onChange={handleChange}/>
                 <p>
                 <input type="submit" value="OK"/>

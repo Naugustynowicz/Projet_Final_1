@@ -65,13 +65,13 @@ const Desinscription = () => {
     if (error) {
         return (
             <>
-            <div>Error: {error.message}</div>
-            <h1>Titre</h1>
-            <p>Ceci est un titre</p>
+            <div>Erreur: {error.message}</div>
+            <h1>Desinscription</h1>
+            <p>Utilisateur à supprimer : </p>
             <form onSubmit={handleSubmit}>
-                <label for="userName">Name</label>
+                <label for="userName">Nom d'Utilisateur</label>
                 <input id="userName" type="text" name="userName" onChange={handleChange}/>
-                <label for="password">Password</label>
+                <label for="password">Mot de Passe</label>
                 <input id="password" type="text" name="password" onChange={handleChange}/>
                 <p>
                 <input type="submit" value="OK"/>
@@ -80,39 +80,27 @@ const Desinscription = () => {
             </>
         );
     } else if (!isLoaded) {
-        return <div>Loading...</div>;
+        return <div>Chargement en cours...</div>;
     } else if(items && items.usersInstances && items.usersInstances.userName && items.usersInstances.password){
         if(items.usersInstances.password === "true"){
         return (
                 <>
-                <ul> You're connected as :
+                <ul> L'utilisateur ci-dessous a été supprimé correctement :
                     {items.usersInstances.userName}
                 </ul>
-                
-                <h1>Titre</h1>
-                <p>Ceci est un titre</p>
-                <form onSubmit={handleSubmit}>
-                    <label for="userName">Name</label>
-                    <input id="userName" type="text" name="userName" onChange={handleChange}/>
-                    <label for="password">Password</label>
-                    <input id="password" type="text" name="password" onChange={handleChange}/>
-                    <p>
-                    <input type="submit" value="OK"/>
-                    </p>
-                </form>
                 </>
             );
         } else {
             return (
                 <>
-                <div>Error: wrong password</div>
+                <div>Erreur: mot de passe incorrect.</div>
                 
-                <h1>Titre</h1>
-                <p>Ceci est un titre</p>
+                <h1>Desinscription</h1>
+                <p>Utilisateur à supprimer :</p>
                 <form onSubmit={handleSubmit}>
-                    <label for="userName">Name</label>
+                    <label for="userName">Nom d'Utilisateur</label>
                     <input id="userName" type="text" name="userName" onChange={handleChange}/>
-                    <label for="password">Password</label>
+                    <label for="password">Mot de Passe</label>
                     <input id="password" type="text" name="password" onChange={handleChange}/>
                     <p>
                     <input type="submit" value="OK"/>
@@ -125,13 +113,13 @@ const Desinscription = () => {
     } else {
         return(
             <>
-            <div>Error: empty response</div>
-            <h1>Titre</h1>
-            <p>Ceci est un titre</p>
+            <div>RàS</div>
+            <h1>Desinscription</h1>
+            <p>Utilisateur à supprimer :</p>
             <form onSubmit={handleSubmit}>
-                <label for="userName">Name</label>
+                <label for="userName">Nom d'Utilisateur</label>
                 <input id="userName" type="text" name="userName" onChange={handleChange}/>
-                <label for="password">Password</label>
+                <label for="password">Mot de Passe</label>
                 <input id="password" type="text" name="password" onChange={handleChange}/>
                 <p>
                 <input type="submit" value="OK"/>

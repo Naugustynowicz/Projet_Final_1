@@ -95,23 +95,23 @@ const CharactersList = () => {
     if (error) {
         return (
             <>
-            <div>Error: {error.message}</div>
+            <div>Erreur: {error.message}</div>
             <h1>Liste des Personnages</h1>
             <p>Ceci est un titre</p>
             </>
         );
     } else if (!isLoaded) {
-        return <div>Loading...</div>;
+        return <div>Chargement en cours...</div>;
     } else if(items && items.usersInstances && items.usersInstances.password){
         if(items.usersInstances.password === "true" && items.charactersInstances){
         return (
                 <>
-                <ul> You're connected as :
+                <ul> Nom d'utilisateur : 
                     {items.usersInstances.userName}
                 </ul>
 
                 
-                <ul> Liste de personnages :
+                <ul> Liste des personnages : 
                     {
                         items.charactersInstances.map((character,i) => {
                             return <li key={i}>{character["characterName"]}</li>;
@@ -128,19 +128,7 @@ const CharactersList = () => {
         } else {
             return (
                 <>
-                <div>Error: you're not connected</div>
-                
-                <h1>Page</h1>
-                <p>Ceci est un titre</p>
-                <form onSubmit={handleSubmit}>
-                    <label for="userName">Name</label>
-                    <input id="userName" type="text" name="userName" onChange={handleChange}/>
-                    <label for="password">Password</label>
-                    <input id="password" type="text" name="password" onChange={handleChange}/>
-                    <p>
-                    <input type="submit" value="OK"/>
-                    </p>
-                </form>
+                <div>Erreur: veuillez vous connecter.</div>
                 </>
             );
         }
@@ -148,16 +136,10 @@ const CharactersList = () => {
     } else {
         return(
             <>
-            <div>Error: empty response</div>
-            <h1>Page</h1>
-            <p>Ceci est un titre</p>
+            <div>Veuillez cliquer ci-dessous.</div>
             <form onSubmit={handleSubmit}>
-                <label for="userName">Name</label>
-                <input id="userName" type="text" name="userName" onChange={handleChange}/>
-                <label for="password">Password</label>
-                <input id="password" type="text" name="password" onChange={handleChange}/>
                 <p>
-                <input type="submit" value="OK"/>
+                <input type="submit" value="Personnages"/>
                 </p>
             </form>
             </>
