@@ -23,9 +23,10 @@ async function main() {
 
   const usersModelSchema = new Schema({
     //_id: Schema.Types.ObjectId,
-    _id: Number,
-    userName: String,
-    password: String,
+    _id: {type: Number, required: true},
+    userName: {type: String, required: true},
+    password: {type: String, required: true},
+    token: String,
     creationDate: { type: Date, default: Date.now() },
     age: { type: Number, min: 18, max: 65, required: true },
   });
@@ -35,10 +36,10 @@ async function main() {
 
 
   // Create an instance of model SomeModel
-  //const test1Instance = new usersModel({ _id: 1, userName: "Test1", password: "test1", age: 18 });
-  //await test1Instance.save();
+  const test1Instance = new usersModel({ _id: 1, userName: "Test1", password: "test1", age: 18 });
+  await test1Instance.save();
   //create another instance
-  //await usersModel.create({ _id: 2, userName: "Test2", password: "test2", age: 18 });
+  await usersModel.create({ _id: 2, userName: "Test2", password: "test2", age: 18 });
 
   // Access model field values using dot notation
   //console.log(test1Instance.userName); //should log 'also_awesome'

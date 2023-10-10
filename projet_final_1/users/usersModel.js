@@ -8,9 +8,10 @@ const Schema = mongoose.Schema;
 
 const usersModelSchema = new Schema({
     //_id: Schema.Types.ObjectId,
-    _id: Number,
-    userName: String,
-    password: String,
+    _id: {type: Number, required: true},
+    userName: {type: String, required: true},
+    password: {type: String, required: true},
+    token: String,
     creationDate: { type: Date, default: Date.now() },
     age: { type: Number, min: 18, max: 65, required: true },
 });

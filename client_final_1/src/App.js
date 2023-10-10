@@ -4,6 +4,11 @@ import Home from "./Controllers/Home";
 import Contact from "./Controllers/Contact";
 import Nav from "./Components/Nav";
 import Article from "./Controllers/Article";
+import Connection from "./Controllers/Connection";
+import Deconnection from "./Controllers/Deconnection";
+import Inscription from "./Controllers/Inscription";
+import Desinscription from "./Controllers/Desinscription";
+
 
 //commandes
 //npm init react-app exemple
@@ -11,6 +16,8 @@ import Article from "./Controllers/Article";
 //npm run start
 
 function App() {
+  
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -19,6 +26,10 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="/article/:id" element={<Article />}></Route>
+          <Route path="/connection" element={<Connection />}></Route>
+          <Route path="/deconnection" element={<Deconnection />}></Route>
+          <Route path="/inscription" element={<Inscription />}></Route>
+          <Route path="/desinscription" element={<Desinscription />}></Route>
           <Route path="*" element={
             <h1>Rien à voir ici.</h1>
           }></Route>

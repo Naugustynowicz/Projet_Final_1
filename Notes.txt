@@ -1,0 +1,17 @@
+télécharger et gérer au moins deux polices d'écriture.
+criptage du mdp : utiliser Bcript, argon2, argon2x
+object en js.
+Dans le project à rendre, y mettre un dump de la base de données. 
+
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Get-ExecutionPolicy -List
+
+
+pour l'oral
+se présenter
+présenter l'entreprise rapidement
+présentation du projet
+	- stack utilisé, schéma de bbd, 
+démo du projet
+	- se qu'on peut si non logger, s'inscrire, se logger, démo logger, se logger en admin,
+montrer un bout de code.
