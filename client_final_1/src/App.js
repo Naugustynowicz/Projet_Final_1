@@ -1,13 +1,18 @@
 import './App.css';
+import './style/main.css';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Home from "./Controllers/Home";
 import Contact from "./Controllers/Contact";
 import Nav from "./Components/Nav";
 import Article from "./Controllers/Article";
-import Connection from "./Controllers/Connection";
-import Deconnection from "./Controllers/Deconnection";
-import Inscription from "./Controllers/Inscription";
-import Desinscription from "./Controllers/Desinscription";
+//Users
+import Connection from "./Controllers/Users/Connection";
+import Deconnection from "./Controllers/Users/Deconnection";
+import Inscription from "./Controllers/Users/Inscription";
+import Desinscription from "./Controllers/Users/Desinscription";
+import Page from "./Controllers/Page";
+//Characters
+import CharactersList from "./Controllers/Characters/CharactersList";
 
 
 //commandes
@@ -30,6 +35,8 @@ function App() {
           <Route path="/deconnection" element={<Deconnection />}></Route>
           <Route path="/inscription" element={<Inscription />}></Route>
           <Route path="/desinscription" element={<Desinscription />}></Route>
+          <Route path="/page" element={<Page />}></Route>
+          <Route path="/characters-list" element={<CharactersList />}></Route>
           <Route path="*" element={
             <h1>Rien à voir ici.</h1>
           }></Route>

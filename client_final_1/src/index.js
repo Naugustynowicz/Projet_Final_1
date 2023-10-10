@@ -3,7 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './Components/polyfills';
+//Important note : In order to address a issue, client's side jsonwebtoken version used is a old one
+//"jsonwebtoken": "^9.0.2", 
 
+document.documentElement.lang = "fr";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var charactersRouter = require('./routes/characters');
 
 //connection à la bdd
 const mongoose = require("mongoose");
@@ -33,6 +34,7 @@ app.use((req, res, next) => {
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/characters', charactersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -52,7 +54,7 @@ app.use(function(err, req, res, next) {
 
 
 // Request datas from database.
-const usersModel = require("./users/usersModel");
+const usersModel = require("./models/usersModel");
 
 main().catch((err) => console.log(err));
 async function main() {

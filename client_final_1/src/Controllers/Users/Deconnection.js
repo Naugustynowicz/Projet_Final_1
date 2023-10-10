@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import Cookies from 'universal-cookie';
 
-const Connection = () => {
+const Deconnection = () => {
     
     const [submitForm, setSubmitForm] = useState(false);
     const [inputs, setInputs] = useState({});
@@ -17,7 +16,7 @@ const Connection = () => {
             payload += "&" + key + "=" + inputs[key];
         });
         console.log("payload : " + JSON.stringify(payload));
-        const response = await fetch("http://localhost:9000/users/connection/", {
+        const response = await fetch("http://localhost:9000/users/deconnection/", {
             method: "POST", 
             mode: "cors",
             cache: "no-cache",
@@ -70,40 +69,36 @@ const Connection = () => {
             <h1>Titre</h1>
             <p>Ceci est un titre</p>
             <form onSubmit={handleSubmit}>
-                <p>
-                <label htmlFor="userName">Name</label>
+                <label for="userName">Name</label>
                 <input id="userName" type="text" name="userName" onChange={handleChange}/>
-                </p><p>
-                <label htmlFor="password">Password</label>
+                <label for="password">Password</label>
                 <input id="password" type="text" name="password" onChange={handleChange}/>
-                </p>
+                <p>
                 <input type="submit" value="OK"/>
+                </p>
             </form>
             </>
         );
     } else if (!isLoaded) {
         return <div>Loading...</div>;
     } else if(items && items.usersInstances && items.usersInstances.userName && items.usersInstances.password){
-        if(items.usersInstances.password === "true" && items.usersInstances.token){
-            const cookies = new Cookies();
-            cookies.set(items.usersInstances.userName, items.usersInstances.token, { path: '/' });
+        if(items.usersInstances.password === "true"){
         return (
                 <>
-                <ul> You're connected as :
+                <ul> You're deconnected as :
                     {items.usersInstances.userName}
                 </ul>
                 
                 <h1>Titre</h1>
                 <p>Ceci est un titre</p>
                 <form onSubmit={handleSubmit}>
-                    <p>
-                    <label htmlFor="userName">Name</label>
+                    <label for="userName">Name</label>
                     <input id="userName" type="text" name="userName" onChange={handleChange}/>
-                    </p><p>
-                    <label htmlFor="password">Password</label>
+                    <label for="password">Password</label>
                     <input id="password" type="text" name="password" onChange={handleChange}/>
-                    </p>
+                    <p>
                     <input type="submit" value="OK"/>
+                    </p>
                 </form>
                 </>
             );
@@ -115,14 +110,13 @@ const Connection = () => {
                 <h1>Titre</h1>
                 <p>Ceci est un titre</p>
                 <form onSubmit={handleSubmit}>
-                    <p>
-                    <label htmlFor="userName">Name</label>
+                    <label for="userName">Name</label>
                     <input id="userName" type="text" name="userName" onChange={handleChange}/>
-                    </p><p>
-                    <label htmlFor="password">Password</label>
+                    <label for="password">Password</label>
                     <input id="password" type="text" name="password" onChange={handleChange}/>
-                    </p>
+                    <p>
                     <input type="submit" value="OK"/>
+                    </p>
                 </form>
                 </>
             );
@@ -131,18 +125,17 @@ const Connection = () => {
     } else {
         return(
             <>
-            <div>Error: empty response</div>
+            <div>You're deconnected</div>
             <h1>Titre</h1>
             <p>Ceci est un titre</p>
             <form onSubmit={handleSubmit}>
-                <p>
-                <label htmlFor="userName">Name</label>
+                <label for="userName">Name</label>
                 <input id="userName" type="text" name="userName" onChange={handleChange}/>
-                </p><p>
-                <label htmlFor="password">Password</label>
+                <label for="password">Password</label>
                 <input id="password" type="text" name="password" onChange={handleChange}/>
-                </p>
+                <p>
                 <input type="submit" value="OK"/>
+                </p>
             </form>
             </>
         );
@@ -150,4 +143,4 @@ const Connection = () => {
     
 }
 
-export default Connection;
+export default Deconnection;

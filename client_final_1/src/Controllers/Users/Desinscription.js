@@ -69,14 +69,13 @@ const Desinscription = () => {
             <h1>Titre</h1>
             <p>Ceci est un titre</p>
             <form onSubmit={handleSubmit}>
-                <p>
-                <label htmlFor="userName">Name</label>
+                <label for="userName">Name</label>
                 <input id="userName" type="text" name="userName" onChange={handleChange}/>
-                </p><p>
-                <label htmlFor="password">Password</label>
+                <label for="password">Password</label>
                 <input id="password" type="text" name="password" onChange={handleChange}/>
-                </p>
+                <p>
                 <input type="submit" value="OK"/>
+                </p>
             </form>
             </>
         );
@@ -93,14 +92,13 @@ const Desinscription = () => {
                 <h1>Titre</h1>
                 <p>Ceci est un titre</p>
                 <form onSubmit={handleSubmit}>
-                    <p>
-                    <label htmlFor="userName">Name</label>
+                    <label for="userName">Name</label>
                     <input id="userName" type="text" name="userName" onChange={handleChange}/>
-                    </p><p>
-                    <label htmlFor="password">Password</label>
+                    <label for="password">Password</label>
                     <input id="password" type="text" name="password" onChange={handleChange}/>
-                    </p>
+                    <p>
                     <input type="submit" value="OK"/>
+                    </p>
                 </form>
                 </>
             );
@@ -112,14 +110,13 @@ const Desinscription = () => {
                 <h1>Titre</h1>
                 <p>Ceci est un titre</p>
                 <form onSubmit={handleSubmit}>
-                    <p>
-                    <label htmlFor="userName">Name</label>
+                    <label for="userName">Name</label>
                     <input id="userName" type="text" name="userName" onChange={handleChange}/>
-                    </p><p>
-                    <label htmlFor="password">Password</label>
+                    <label for="password">Password</label>
                     <input id="password" type="text" name="password" onChange={handleChange}/>
-                    </p>
+                    <p>
                     <input type="submit" value="OK"/>
+                    </p>
                 </form>
                 </>
             );
@@ -132,14 +129,13 @@ const Desinscription = () => {
             <h1>Titre</h1>
             <p>Ceci est un titre</p>
             <form onSubmit={handleSubmit}>
-                <p>
-                <label htmlFor="userName">Name</label>
+                <label for="userName">Name</label>
                 <input id="userName" type="text" name="userName" onChange={handleChange}/>
-                </p><p>
-                <label htmlFor="password">Password</label>
+                <label for="password">Password</label>
                 <input id="password" type="text" name="password" onChange={handleChange}/>
-                </p>
+                <p>
                 <input type="submit" value="OK"/>
+                </p>
             </form>
             </>
         );
