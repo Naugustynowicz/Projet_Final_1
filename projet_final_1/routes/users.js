@@ -114,7 +114,7 @@ router.post('/connection/', async function(req, res, next) {
 });
 
 router.post('/deconnection/', async function(req, res, next) {
-  res.send('Page inscription (post) : //!\\ work in progress //!\\.');
+  res.send('Page deconnection (post) : //!\\ work in progress //!\\.');
 });
 
 router.post('/inscription/', async function(req, res, next) {
